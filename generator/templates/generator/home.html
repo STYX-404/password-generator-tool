@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<div class="container text-center">
+    <p class="display-3">Password Generator</p>
+    <br>
+    <form action="{% url 'password' %}">
+        <label>
+            <h4>Password Length</h4>
+        </label>
+        <br>
+        <select class="btn btn-warning dropdown-toggle" aria-haspopup="true" aria-expanded="false" name="length">
+            <div class="dropdown-menu">
+                <option class="dropdown-item" value="6">6</option>
+                <option class="dropdown-item" value="9">9</option>
+                <option class="dropdown-item" value="12" selected="selected">12</option>
+                <option class="dropdown-item" value="15">15</option>
+                <option class="dropdown-item" value="18">18</option>
+                <option class="dropdown-item" value="20">20</option>
+                <option class="dropdown-item" value="25">25</option>
+            </div>
+        </select>
+
+        <br>
+        <br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="uppercase">
+            <label class="form-check-label">Uppercases</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="numbers">
+            <label class="form-check-label">Numbers</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="special_characters">
+            <label class="form-check-label">Special Characters</label>
+        </div>
+        <br>
+        <br>
+        <input type="submit" value="Generate Password" class="btn btn-primary"></input>
+    </form>
+    <a href="{% url 'about' %}" class="btn btn-dark">About</a>
+</div>
